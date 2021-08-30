@@ -93,3 +93,19 @@ window.addEventListener('scroll', function () {
   backToTop()
   activateMenuAtCurrentSection()
 })
+
+/* Modal Login*/ 
+
+function openModal(modalID) {
+  const modal = document.getElementById(modalID);
+    if(modal){
+    modal.classList.add('open')
+    modal.addEventListener('click', (e) => {
+      if( e.target.id == modalID || e.target.className == 'closemodal')
+        modal.classList.remove('open');
+    });
+  }
+}
+
+const login = document.querySelector('#login');
+login.addEventListener("click", () => openModal('modal-login'));
